@@ -1,9 +1,12 @@
 import React from "react";
 
-const SearchResult = () => {
+const SearchResult = ({filterData}:{filterData:any}) => {
     return (
         <div>
-            {/* Your JSX content for the search result */}
+            <div>
+                <h1>Results</h1>
+                <p>Price and other detail may vary based on the product size and colour. </p>
+            </div>
         </div>
     );
 }

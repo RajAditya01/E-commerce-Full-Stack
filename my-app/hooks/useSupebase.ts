@@ -20,12 +20,15 @@ export const useSupabase = () => {
         }
     };
 
-    const getFilterData = async (query:string) => {
+    const getFilterData = async (query: string) => {
         try {
-            const { data, error } = await supabase.from('products').select("*").ilike('title', query);
+            const { data, error } = await supabase
+                .from('products')
+                .select("*")
+                .or(`discription.ilike.%${query}%`, `category.ilike.%${query}%`);
             if (data) {
                 console.log(data);
-                setProducts(data); 
+                setFilterData(data); // Set the filtered data to the state
             }
             if (error) {
                 console.log(error);
@@ -41,5 +44,5 @@ export const useSupabase = () => {
     //     getDataFromSupabase();
     // }, []);
 
-    return { products, getDataFromSupabase,filterData, getFilterData };
+    return { products, getDataFromSupabase, filterData, getFilterData };
 };
