@@ -1,9 +1,9 @@
-import Image from "next/image";
-
+import HomePage from "@/components/HomePage";
+ 
 export default function Home() {
   return (
-    <div>
-      Lets Build Amazon 2.0...
-    </div>
+     <div>
+       <HomePage/>
+     </div>
   );
 }
