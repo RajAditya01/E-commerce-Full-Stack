@@ -9,10 +9,10 @@ import { useAppSelector } from '@/lib/supabase/hooks/redux';
 import { getCart } from '@/redux/cartSlice';
 
 const Checkout = () => {
-    
+
     const cart = useAppSelector(getCart);
     let totalPrice = 0;
-    cart.forEach((item:any)=>{
+    cart.forEach((item: any) => {
         totalPrice += item.price * item.quantity
     });
 
@@ -39,4 +39,3 @@ const Checkout = () => {
 }
 
 export default Checkout
-
