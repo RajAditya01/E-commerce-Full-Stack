@@ -8,6 +8,7 @@ export async function POST(req:NextRequest, res:NextResponse){
     const {items, email} = body;
   
     // stripe payment gateway
+    
     const orangedItems = items.map((item:any)=>({
         price_data:{
             currency:'usd',
